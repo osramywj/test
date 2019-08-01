@@ -1,0 +1,27 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.iyunxiao.com:yangwenju/test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "commander": "^2.20.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "npmyangwenju": "git+ssh://git@github.com:osramywj/npmyangwenju.git",
+    "prompts": "^2.1.0",
+    "word2pdf": "^1.0.7"
+  },
+  "bin": {
+    "np": "./npm.js"
+  }
+}
