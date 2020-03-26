@@ -7,8 +7,20 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceFolder}/t.js"
+            "name": "test",
+            "program": "${workspaceFolder}/test.js",
+            "autoAttachChildProcesses": true,
+        },
+        {
+            "name": "typescript",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/ts-node/dist/bin.js",
+            "args": [
+                "{relativeFile}"
+            ],
+            "cwd": "${workspaceFolder}",
+            "protocol": "inspector"
         }
     ]
 }
