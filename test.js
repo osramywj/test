@@ -1,7 +1,6 @@
 const yangwenju = require('npmyangwenju');
 111111
 df
-ddd
 console.log(yangwenju.test());
 hello
 jijfdosj
