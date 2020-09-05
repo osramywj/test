@@ -1,5 +1,5 @@
 const yangwenju = require('npmyangwenju');
-777
+00000
 666
 555
 444
