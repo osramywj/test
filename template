@@ -1,0 +1,30 @@
+const config = require('config');
+const { MongoClient, ObjectId } = require('mongodb');
+const _ = require('lodash');
+const moment = require('moment');
+const fs = require('fs');
+const path = require('path');
+const axios = require('axios');
+
+const fdDbUri = config.get('mongo.uri');
+let fdDb;
+
+(async function () {
+    fdDb = await MongoClient.connect(fdDbUri);
+    try {
+        console.log('gen start');
+        await main();
+        console.log('gen end');
+    } catch (e) {
+        console.log(e.stack || err);
+    } finally {
+        await fdDb.close();
+        setTimeout(() => {
+            process.exit(1);
+        }, 5000);
+    }
+})();
+
+async function main() {
+
+}
