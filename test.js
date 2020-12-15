@@ -17,6 +17,6 @@ function gets() {
 }
 
 const res = new Date;
-
+dddd
 console.log(res);
 
