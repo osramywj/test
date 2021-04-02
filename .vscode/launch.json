@@ -10,7 +10,7 @@
             "request": "launch",
             "name": "test",
             "program": "${workspaceFolder}/test.js",
-            "autoAttachChildProcesses": true,
+            // "autoAttachChildProcesses": true,
         },
         {
             "type": "node",

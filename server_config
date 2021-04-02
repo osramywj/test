@@ -1,4 +1,8 @@
 test    work    10.10.32.9  16004
 pre     work    10.10.104.240  16000
 pro     work    10.10.104.101
-hfsfd-changelog     work   10.10.16.3
+hfsfd-changelog     work   10.10.32.5 16000
+testdmp work  10.12.61.251  16002
+qtyf  work 10.10.108.251 16001
+test-root root 10.10.32.9  16004
+testhfs work 10.10.100.248 16000

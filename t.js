@@ -67,4 +67,3 @@ function genMap(arr, key) {
 // }
 const bar = new Date(0);
 const res = bar.getTime();
-
