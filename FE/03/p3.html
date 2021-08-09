@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            width: 590px;
+            height: 470px;
+            margin: 100px auto;
+            list-style: none;
+            /* background-color: #bfa; */
+            position: relative;
+            padding: 0;
+        }
+        li{
+            position: absolute;
+        }
+
+        .point{
+            position: absolute;
+            bottom: 10px;
+        }
+        .point a {
+            float: left;
+            width: 10px;
+            height: 10px;
+            margin-left: 5px;
+            border: 3px solid transparent;
+            background-clip: content-box;
+            border-radius: 50%;
+            background-color: rgb(255,255,255,.6);
+        }
+
+        .point a.active,a:hover {
+            background-color: #fff;
+            border: 3px solid rgb(255,255,255,.3);
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href=""><img src="./img/1.jpg" alt=""></a></li>
+        <li><a href=""><img src="./img/2.jpg" alt=""></a></li>
+        <li><a href=""><img src="./img/3.jpg" alt=""></a></li>
+        <li><a href=""><img src="./img/4.jpg" alt=""></a></li>
+        <li><a href=""><img src="./img/5.jpg" alt=""></a></li>
+        <li><a href=""><img src="./img/6.jpg" alt=""></a></li>
+        <li><a href=""><img src="./img/7.jpg" alt=""></a></li>
+        <li><a href=""><img src="./img/8.jpg" alt=""></a></li>
+        <div class="point">
+            <a class="active" href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+        </div>
+    </ul>
+</body>
+</html>

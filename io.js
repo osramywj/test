@@ -1,5 +1,3 @@
-const { isObject } = require('lodash');
-
 const app = require('express')();
 
 let httpServer = require('http').createServer(app);

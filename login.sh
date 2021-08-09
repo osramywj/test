@@ -41,7 +41,7 @@ function ConfigList(){
  
 #登录菜单
 function LoginMenu(){
-    if [  ! -n $1 ]; then
+    if [[ -n $1 ]]; then
         AutoLogin $1
     else
         echo "-------请输入登录的服务器序号---------"
@@ -75,17 +75,18 @@ function AutoLogin(){
     num=$(($1-1))
     CONFIG=(${CONFIGS[$num]})
     echo "正在登录【${CONFIG[0]}】"
-    if [ ${CONFIG[3]} ]
-    then
-        loginStr="ssh ${CONFIG[1]}@${CONFIG[2]} -p ${CONFIG[3]}\n"
-    else
-        loginStr="ssh ${CONFIG[1]}@${CONFIG[2]}\n"
-    fi
 
-    runStr="/usr/bin/expect -c ' spawn ssh jump ; send \"$loginStr\"; interact'"
-    eval $runStr
+    if [[ ${CONFIG[3]} = "straight" ]];then
+        ssh ${CONFIG[1]}@${CONFIG[2]}
+    else 
+        if [[ -n ${CONFIG[3]} ]];then
+            loginStr="ssh ${CONFIG[1]}@${CONFIG[2]} -p ${CONFIG[3]}\n"
+        else
+            loginStr="ssh ${CONFIG[1]}@${CONFIG[2]}\n"
+        fi
+        /usr/bin/expect -c "spawn ssh jump;send \"$loginStr\";interact"
+    fi
     echo "您已退出【${CONFIG[0]}】"
- 
 }
  
 # 程序入口

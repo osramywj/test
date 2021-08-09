@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            height: 200px;
+            width: 200px;
+            background-color: aqua;
+        }
+    </style>
+    <script type="text/javascript" src="../../jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1 contenteditable="true">登录</h1>
+    <div>用户名：<input type="checkbox" id="account" data-ddd="test" class="a b c d"></div>
+    <div>用户名：<input type="checkbox" id="account2"></div>
+    <div>密码：<input type="checkbox" id="pwd"></div>
+    <button id="btn">提交</button>
+</body>
+<script>
+    const box = document.querySelector('input[id=account]');
+    console.log(box.classList);
+</script>
+
+<script>
+
+    // $(function(){
+    //     $('#btn').click(function(){
+    //         // const input = $(':checkbox[id=account]');
+    //         // input.attr('checked', 'checked');
+    //         // input.aaa = 'aaa';
+    //         // debugger;
+    //         const box = document.querySelector('input[type=checkbox]');
+    //         box.setAttribute('checked', 'checked1');
+
+    //         box.checked= false;
+    //     //     const data = {
+    //     //         name: $('#account').val(),
+    //     //         password: $('#pwd').val()
+    //     //     }
+    //     //     $.post('http://localhost:8080/post', data,function(data, status) {
+    //     //         alert(data);
+    //     //     })
+
+
+    //     })
+        
+    })
+    
+</script>
+</html>

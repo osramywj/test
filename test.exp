@@ -1,0 +1,12 @@
+#!/usr/bin/expect
+
+#spawn ssh jump
+#send "ssh work@172.17.1.110\n"
+#interact
+
+exp_continue {
+    'a' send "a"
+    'b' send "b"
+    'c' send "a"
+}
+

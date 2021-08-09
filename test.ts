@@ -1,6 +1,6 @@
-let a = 'test';
+let a = 'test2';
 function test(){
-    return 'aaaaa' + a;
+    return 'aA' + a;
 }
 
 console.log(test());

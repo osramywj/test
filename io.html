@@ -7,9 +7,9 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/socket.io/3.0.0-rc3/socket.io.js"></script>
     <script>
         // socket.io引入成功后，可通过io()生成客户端所需的socket对象。
-        // let socket = io('http://127.0.0.1:8000',{transports: ['websocket']});
+        let socket = io('http://127.0.0.1:8000',{transports: ['websocket']});
         // 不设置transports的话，默认会走polling模式，服务端需要配置cors跨域
-        let socket = io('http://127.0.0.1:8000');
+        // let socket = io('http://127.0.0.1:8000');
 
         socket.on('server message', (data) => {
             console.log('server:', data);

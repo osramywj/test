@@ -15,8 +15,36 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "test2",
+            "program": "${workspaceFolder}/test2.js",
+            // "autoAttachChildProcesses": true,
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "t",
+            "program": "${workspaceFolder}/t.js",
+            // "autoAttachChildProcesses": true,
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "io",
             "program": "${workspaceFolder}/io.js",
+            "autoAttachChildProcesses": true,
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "readableStream",
+            "program": "${workspaceFolder}/readableStream.js",
+            "autoAttachChildProcesses": true,
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "t",
+            "program": "${workspaceFolder}/t.js",
             "autoAttachChildProcesses": true,
         },
         {

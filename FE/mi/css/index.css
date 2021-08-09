@@ -1,0 +1,48 @@
+.topbar-wrapper{
+    width: 100%;
+    background-color: #333;
+    height: 40px;
+    line-height: 40px;
+}
+
+.service, .topbar li{
+    float: left;
+}
+
+.shop-cart,.user-info{
+    float: right;
+}
+
+.topbar a{
+    color: #b0b0b0;
+    font-size: 12px;
+    display: block;
+}
+.topbar a:hover{
+    color: #fff;
+}
+
+.line {
+    font-size: 12px;
+    color: #424242;
+    margin: 0 3.6px;
+}
+.shop-cart{
+    margin-left: 26px;
+}
+.shop-cart a{
+    width: 120px;
+    text-align: center;
+    background-color: #424242;
+}
+.shop-cart:hover{
+    display: block;
+}
+
+.cart-list{
+    width: 316px;
+    height: 100px;
+    box-shadow: 0 0 10px #edededed;
+    text-align: center;
+    vertical-align: middle;
+}
