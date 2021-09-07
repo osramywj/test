@@ -5,8 +5,10 @@ const simpleGit = require('simple-git');
 const git = simpleGit();
 (async function (){
     // await git.init().addRemote('origin', 'git@github.com:osramywj/testgit.git');
-    const logs = await git.log();
-    console.log(logs);
+    const logs = await git.show('ebe3e8d4ebc72c2c4641faa091cddf5a1ff9a206');
+    const diffJson = Diff2html.parse(logs);
+    const diffHtml = Diff2html.html(diffJson, { drawFileList: true });
+    console.log(diffHtml);
 })()
 
 // git.raw(['diff', '--no-index', 'diff1.js', 'diff2.js'], (err, res) => {
