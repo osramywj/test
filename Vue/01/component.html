@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="icon" href="./favicon.ico">
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        
+    </div>
+    <script>
+        const person = Vue.extend({
+            data(){
+                return {
+                    name: '杨文举',
+                    age: 30
+                };
+            },
+            template: `
+                <div>
+                    <h1>{{name}}</h1>    
+                    <h1>{{age}}</h1>    
+                </div>
+            `
+        })
+
+        const school = {
+            data(){
+                return {
+                    name: '武汉理工',
+                    years: 20
+                };
+            },
+            components:{
+                person
+            },
+            template: `<div>
+                <h1>{{name}}</h1>
+                <h1>{{years}}</h1>
+                <person></person>
+                </div>`
+        }
+
+        const app = Vue.extend({
+            components:{
+                school
+            },
+            template: `
+                <div>
+                    <school></school>
+                </div>`
+        })
+
+        
+        const vm = new Vue({
+            el:'#root',
+            template: `<app></app>`,
+            data: {
+                name: 'yangwenju',
+                age: '12345'
+            },
+            components: {
+                app,
+            }
+        });
+        
+        
+    </script>
+</body>
+</html>

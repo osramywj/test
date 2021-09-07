@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 200px;
+            background-color: #bfa;
+            overflow: auto;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            const box = document.getElementById('box');
+            let display = true;
+            box.onscroll = function(){
+                const inputs = document.getElementsByTagName('input');
+                const btns = document.getElementsByTagName('button');
+                if(this.scrollHeight - this.scrollTop === this.clientHeight){
+                    display = false;
+                }
+                inputs[0].disabled = display;
+                btns[0].disabled = display;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        一堆字<br>
+        一堆字<br>
+        一堆字<br>
+        一堆字<br>
+        一堆字<br>
+        一堆字<br>
+        一堆字<br>
+        一堆字<br>
+        一堆字<br>
+        一堆字<br>
+        一堆字<br>
+        一堆字<br>
+        一堆字<br>
+        一堆字<br>
+        一堆字<br>
+        一堆字<br>
+        一堆字<br>
+        一堆字<br>
+    </div>
+    <div>
+        <input type="checkbox" name="" id="" disabled>已阅读
+        <button disabled>提交</button>
+    </div>
+    
+</body>
+</html>

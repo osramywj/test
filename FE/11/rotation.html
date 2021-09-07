@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 500px;
+            height: 332px;
+            background-color: #bfa;
+            overflow: hidden;
+            position: relative;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            position: absolute;
+        }
+        img{
+            vertical-align: top;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            const ulEle = document.getElementById('list');
+            const imgList = document.getElementsByTagName('img');
+
+            let index = 0;
+
+            const outer = setInterval(() => {
+                let now = Date.now();
+                // index无论放在定时器的前面还是后面，定时器执行时都是加过1的
+                index++;
+
+                let innerInterval = setInterval(function(){
+
+                        const l = parseInt(ulEle.offsetLeft);
+
+                        const left = l-5;
+                        ulEle.style.left = left + 'px';
+
+                        if(left === -500*index){
+                            clearInterval(innerInterval);
+
+                            if (index === imgList.length -1){
+                                index = 0;
+                                ulEle.style.left = '0px';
+                            }
+                        }
+                    }, 1);
+                // index++;
+                // console.log('outer', index);
+            }, 3000);
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <ul id="list">
+            <li><img src="./img/1.jpg" alt=""></li>
+            <li><img src="./img/2.jpg" alt=""></li>
+            <li><img src="./img/3.jpg" alt=""></li>
+            <li><img src="./img/4.jpg" alt=""></li>
+            <li><img src="./img/5.jpg" alt=""></li>
+            <li><img src="./img/1.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>

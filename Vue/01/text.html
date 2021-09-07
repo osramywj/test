@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./favicon.ico">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        #root{
+            /* height: 100px; */
+            /* width: 300px; */
+            background-color: #bfa;
+            /* padding: 20px; */
+            /* overflow: auto; */
+        }
+        div{
+            /* width: 100px; */
+            /* height: 100px; */
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="root" >
+        <h1>{{name}}</h1>
+        <h1 v-big="n"></h1><br>
+        <input type="text" v-fbig="n">
+        <button @click="n++">点击</button>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                name: "ni hao ",
+                n:1
+            },
+            directives:{
+                big(ele, data){
+                    console.log('big被调用了');
+                    // console.log(ele,data);
+                    ele.innerText = data.value*10;
+                },
+                fbig:{
+                    bind(ele, binding){
+                        console.log('bind');
+                        ele.value = binding.value;
+                    },
+                    inserted(ele, binding){
+                        console.log('inserted');
+                        ele.focus();
+                    },
+                    update(ele, binding){
+                        console.log('update');
+                        ele.value = binding.value;
+                        ele.focus();
+
+                    }
+                }
+            }
+           
+        });
+    </script>
+</body>
+</html>

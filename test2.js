@@ -1,4 +1,3 @@
-
-
-const res = Math.log(e)
-console.log(res);
+export default function test(){
+    console.log('test');
+}

@@ -1,0 +1,123 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.top-bar-wrapper {
+  background-color: #000;
+}
+.top-bar {
+  max-width: 1220px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  height: 48px;
+  padding: 0 14px;
+  background-color: #000;
+  align-items: center;
+  color: #fff;
+}
+.top-bar .menu {
+  height: 100%;
+}
+.top-bar .menu .icon {
+  width: 18px;
+  height: 100%;
+  position: relative;
+}
+.top-bar .menu .icon .line {
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  position: absolute;
+  transform-origin: left;
+  transition: transform 0.2s;
+}
+.top-bar .menu .icon .line:nth-child(1) {
+  top: 18px;
+}
+.top-bar .menu .icon .line:nth-child(2) {
+  top: 24px;
+}
+.top-bar .menu .icon .line:nth-child(3) {
+  top: 30px;
+}
+.top-bar .menu .icon:hover .line:nth-child(1) {
+  transform: rotateZ(40deg);
+}
+.top-bar .menu .icon:hover .line:nth-child(2) {
+  visibility: hidden;
+}
+.top-bar .menu .icon:hover .line:nth-child(3) {
+  transform: rotateZ(-40deg);
+}
+.menu:hover .menu-list {
+  display: block;
+}
+.menu-list {
+  display: none;
+  list-style: none;
+  position: absolute;
+  top: 48px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  padding: 60px;
+}
+.menu-list a {
+  text-decoration: none;
+}
+.menu-list li {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  line-height: 40px;
+}
+.menu-list li:last-child input {
+  color: #fff;
+  border: none;
+  outline: hidden;
+  background-color: #000;
+}
+.menu-list li a {
+  color: #fff;
+  display: block;
+}
+.logo a {
+  display: block;
+  width: 122px;
+  height: 32px;
+  background-image: url(../img/dff63979.sprites-index@2x.png);
+  background-size: 400px 400px;
+}
+@media only screen and (min-width: 768px) {
+  .menu {
+    order: 2;
+    flex: auto;
+  }
+  .menu .icon {
+    display: none;
+  }
+  .menu:hover .menu-list {
+    display: flex;
+  }
+  .menu .menu-list {
+    display: flex;
+    padding: 0;
+    position: static;
+    justify-content: space-around;
+  }
+  .menu .menu-list input {
+    display: none;
+  }
+  .menu .menu-list li {
+    border: none;
+    line-height: 48px;
+  }
+  .logo {
+    order: 1;
+  }
+  .user-info {
+    order: 3;
+  }
+}
+/*# sourceMappingURL=./index.css.map */

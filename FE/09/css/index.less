@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@total-width:750;
+
+html {
+    font-size: (100vw/750) * 40;
+    background-color: #eff0f3;
+}
+
+.w {
+    width: (693rem/40);
+    margin: 0 auto;
+}
+.top-bar:extend(.w){
+    display: flex;
+    height: (175rem/40);
+    line-height: (175rem/40);
+    justify-content: space-between;
+    align-items: center;
+    font-size: (50rem/40);
+}
+
+.banner:extend(.w){
+    a {
+        width: 100%;
+        img{
+            width: 100%;
+        }
+    }
+}
+
+.category:extend(.w){
+    display: flex;
+    height: (246rem/40);
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    div {
+        width: (327rem/40);
+        height: (104rem/40);
+        border-radius: (20rem/40);
+        line-height: (104rem/40);
+        text-align: center;
+        font-size: (30rem/40);
+        color: white;
+    }
+    .course{
+        background-color: #f96f53;
+    }
+    .star{
+        background-color: #c962ff;
+    }
+    .subscribe{
+        background-color: #fe3971;
+    }
+    .download{
+        background-color: #1e9efe;
+    }
+
+    i {
+        margin: 0 (20rem/40);
+    }
+}
+
+.latest:extend(.w){
+    height: (118rem/40);
+    display: flex;
+    flex: auto;
+    justify-content: space-between;
+    align-items: center;
+    .left{
+        padding-left: (10rem/40);
+        border-left: 2px solid #3b84ff
+    }
+}
+
+.list:extend(.w){
+    display: flex;
+    flex-flow: row nowrap;
+    height: (324rem/40);
+    overflow: auto;
+    .item{
+        width: (328rem/40);
+        background-color: white;
+
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+
+        border-radius:  (20rem/40);
+        margin-right: (40rem/40);
+
+        padding: (20rem/40);
+
+        .title,.author{
+            width: 100%;
+        }
+        .title{
+            font-size: (30rem/40);
+            margin: (20rem/40) 0;
+        }
+        .author{
+            font-size: (20rem/40);
+            display: flex;
+            align-items: center;
+            img{
+                margin-right: (10rem/40);
+            }
+        }
+
+        .p {
+            text-align: center;
+            width: (285rem/40);
+            height: (155rem/40);
+        }
+        .photo{
+            width: 100%;
+            height: 100%;
+        }
+
+        .avatar{
+            width: (42rem/40);
+            height: (42rem/40);
+
+        }
+        
+    }
+}

@@ -632,27 +632,105 @@
 
 // const res = sort2([5,4,3,2,1]);
 // console.log(res);
-const http = require('http');
-const fs = require('fs');
+// const http = require('http');
+// const fs = require('fs');
 
-http.createServer((req, res) => {
-  const url = req.url;
-  console.log();
-  res.setHeader('Access-Control-Allow-Origin', req.headers.origin)
-  if (url === '/health') {
-    res.end('hello');
-  }else if(url === '/'){
-    res.setHeader('content-type', 'text/html');
-    const data = fs.readFileSync('./FE/01/index.html');
-    res.end(data);
-  }else if (url === '/post'){
-    const body = [];
-    req.on('data', function(chunk) {
-      body.push(chunk);
-    });
-    req.on('end', function () {
-      res.end(body.toString());
-    })
-  }
+// http.createServer((req, res) => {
+//   const url = req.url;
+//   console.log();
+//   res.setHeader('Access-Control-Allow-Origin', req.headers.origin)
+//   if (url === '/health') {
+//     res.end('hello');
+//   }else if(url === '/'){
+//     res.setHeader('content-type', 'text/html');
+//     const data = fs.readFileSync('./FE/01/index.html');
+//     res.end(data);
+//   }else if (url === '/post'){
+//     const body = [];
+//     req.on('data', function(chunk) {
+//       body.push(chunk);
+//     });
+//     req.on('end', function () {
+//       res.end(body.toString());
+//     })
+//   }
 
-}).listen(8080);
+// }).listen(8080);
+
+// function Fun(){
+
+// }
+// Fun.prototype.test = function (){
+//   console.log(322);
+// }
+// const fn = new Fun();
+// // fn.test();
+// fn.__proto__.test()
+// console.log();
+// console.log(Fun.prototype);
+// function Foo() {
+//   this.name = 'foo';
+// }
+// Foo.getName = function() {
+//   alert(2);
+// };
+
+// const foo = new Foo();
+// console.log(foo.getName()); // foo.getName is not a function
+
+// var a=3;
+// function fn(){
+//   console.log(a);
+//   var a=4;
+// }
+
+// fn();
+// function SuperMan(name){
+//   this.name = name
+// }
+// SuperMan.prototype.say = function(){
+//   console.log(this.name);
+// }
+// function SubMan(name){
+//   this.name = name
+// }
+// SubMan.prototype = new SuperMan('yang');
+// SubMan.prototype.run = function(){
+//   console.log(this.name);
+// }
+
+// SubMan.prototype.constructor = SubMan;
+
+// const sub = new SubMan('yang')
+// // sub.say();
+// console.log(sub.constructor  );
+
+// function getWeek(n){
+//   return Math.floor((n+3)/7) + 1;
+// }
+
+// for(let i in 4){
+  // console.log(i);           
+// }
+// const moment = require('moment');
+// console.log(moment('2021-01-03').isoWeek());
+// console.log(moment('2021-01-04').subtract(1, 'd').week());
+// console.log(get(11));
+
+
+
+
+// const arr = [{
+//   name: 'yang',age: 11
+// },
+// {
+//   name: 'wen',age: 10
+// }]
+
+// const res = arr.sort((o1, o2) => o2.age - o1.age).map(item => item.age);
+// console.log(res);
+// const moment = require('moment');
+// const res = moment(1630252800000).subtract(1, 'd').week();
+// console.log(res);
+const res = JSON.parse(null);
+console.log(res);

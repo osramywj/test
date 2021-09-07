@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="setStorage()">添加</button>
+    <button onclick="readStorage()">读取</button>
+    <button onclick="removeStorage()">删除</button>
+    <button onclick="clearStorage()">清空</button>
+    <script>
+        function setStorage(){
+            sessionStorage.setItem('msg', 'hello');
+            sessionStorage.setItem('msg2', 'hello2');
+            sessionStorage.setItem('msg3', 'hello3');
+            sessionStorage.setItem('msg4', 'hello4');
+            // sessionStorage.setItem('msg5', JSON.stringify({name: 'yang', age: 30}));
+            sessionStorage.setItem('msg5', {name: 'yang', age: 30});
+        }
+
+        function readStorage(){
+            const data = sessionStorage.getItem('m');
+            console.log(data);
+        }
+        function removeStorage(){
+            sessionStorage.removeItem('msg')
+        }
+
+        function clearStorage(){
+            sessionStorage.clear();
+        }
+    </script>
+</body>
+</html>

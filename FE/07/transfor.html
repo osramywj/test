@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            perspective: 800px;
+        }
+
+        body{
+            height: 800px;
+        }
+
+        .box{
+            height: 400px;
+            width: 1px;
+            margin: 0 auto;
+            transform: rotateZ(1turn);
+            animation: roll .6s steps(60) infinite;
+        }
+        .box , .box3, .box6{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+
+        @keyframes roll {
+            from{
+                transform: rotateZ(0);
+            }
+
+            to{
+                transform: rotateZ(1turn);
+            }
+        }
+        .box1{
+            height: 200px;
+            background-color: red;
+        }
+        .box2{
+            height: 200px;
+        }
+
+
+        .box3{
+            height: 320px;
+            width: 3px;
+            transform: rotateZ(1turn);
+            animation: roll 36s steps(60) infinite;
+            position: absolute;
+        }
+
+        .box4{
+            height: 160px;
+            background-color: black;
+        }
+        .box5{
+            height: 160px;
+        }
+
+
+        .box6{
+            height: 260px;
+            width: 5px;
+            transform: rotateZ(1turn);
+            animation: roll 432s steps(12) infinite;
+            position: absolute;
+        }
+
+        .box7{
+            height: 130px;
+            background-color: black;
+        }
+        .box8{
+            height: 130px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+
+    <div class="box3">
+        <div class="box4"></div>
+        <div class="box5"></div>
+    </div>
+
+    <div class="box6">
+        <div class="box7"></div>
+        <div class="box8"></div>
+    </div>
+</body>
+</html>

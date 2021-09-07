@@ -1,0 +1,140 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.top-bar-wrapper{
+    background-color: #000;
+}
+
+.top-bar{
+    max-width:1220px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    height: 48px;
+    padding: 0 14px;
+    background-color: #000;
+    align-items: center;
+    color: #fff;
+    .menu {
+        height: 100%;
+        .icon{
+            width: 18px;
+            height: 100%;
+            position: relative;
+            .line {
+                width: 100%;
+                height: 1px;
+                background-color: #fff;
+                position: absolute;
+                transform-origin: left;
+                transition: transform .2s;
+            }
+
+            .line:nth-child(1){
+                top: 18px;
+            }
+            .line:nth-child(2){
+                top: 24px;
+            }
+            .line:nth-child(3){
+                top: 30px;
+            }
+
+            &:hover{
+                .line:nth-child(1){
+                    transform: rotateZ(40deg);
+                }
+                .line:nth-child(2){
+                    visibility: hidden;
+                }
+                .line:nth-child(3){
+                    transform: rotateZ(-40deg);
+
+                }
+
+            }
+        }
+    }
+}
+
+.menu:hover .menu-list{
+    display: block;
+}
+
+
+.menu-list{
+    display: none;
+    a {
+        text-decoration: none;
+    }
+    list-style: none;
+    position: absolute;
+    top: 48px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    padding: 60px;
+    li {
+        color: #fff;
+        border-bottom: 1px solid #fff;
+        line-height: 40px;
+        &:last-child input{
+            // border: 1px solid red;
+            color: #fff;
+            border: none;
+            outline: hidden;
+            background-color: #000;
+        }
+        a {
+            color: #fff;
+            display: block;
+        }
+    }
+}
+
+.logo{
+    a {
+        display: block;
+        width: 122px;
+        height: 32px;
+        background-image: url(../img/dff63979.sprites-index@2x.png);
+        background-size: 400px 400px
+    }
+}
+
+@media only screen{
+    @media (min-width: 768px) {
+        .menu{
+            order: 2;
+            .icon{
+                display: none;
+            }
+            flex: auto;
+            &:hover .menu-list{
+                display: flex;
+            }
+            .menu-list{
+                display: flex;
+                padding: 0;
+                position: static;
+                justify-content: space-around;
+                input{
+                    display: none;
+                }
+                li {
+                    border: none;
+                    line-height: 48px;
+                }
+            }
+        }
+        .logo{
+            order: 1;
+        }
+        .user-info{
+            order: 3
+        }
+    }
+}

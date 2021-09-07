@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <!-- Make sure to load the highlight.js CSS file before the Diff2Html CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/github.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css"
+    />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html-ui.min.js"></script>
+  </head>
+  <script>
+    const diffString = `diff --git a/sample.js b/sample.js 
+index 0000001..0ddf2ba 
+--- a/sample.js +++ b/sample.js 
+@@ -1 +1 @@ 
+-console.log("Hello World!") 
++console.log("Hello from Diff2Html!")`;
+
+    // document.addEventListener('DOMContentLoaded', function () {
+    //   var targetElement = document.getElementById('myDiffElement');
+    //   var configuration = {
+    //     drawFileList: true,
+    //     fileListToggle: false,
+    //     fileListStartVisible: false,
+    //     fileContentToggle: false,
+    //     matching: 'lines',
+    //     outputFormat: 'line-by-line',
+    //     synchronisedScroll: true,
+    //     highlight: true,
+    //     renderNothingWhenEmpty: false,
+    //   };
+    //   var diff2htmlUi = new Diff2HtmlUI(targetElement, ['diff1.js', 'diff2.js'], configuration);
+    //   diff2htmlUi.draw();
+    //   diff2htmlUi.highlightCode();
+    // });
+  </script>
+  <body>
+    <div id="myDiffElement">
+        <div class="d2h-file-list-wrapper">
+            <div class="d2h-file-list-header">
+                <span class="d2h-file-list-title">Files changed (1)</span>
+                <a class="d2h-file-switch d2h-hide">hide</a>
+                <a class="d2h-file-switch d2h-show">show</a>
+            </div>
+            <ol class="d2h-file-list">
+            <li class="d2h-file-list-line">
+            <span class="d2h-file-name-wrapper">
+              <svg aria-hidden="true" class="d2h-icon d2h-moved" height="16" title="renamed" version="1.1"
+                   viewBox="0 0 14 16" width="14">
+                  <path d="M6 9H3V7h3V4l5 4-5 4V9z m8-7v12c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h12c0.55 0 1 0.45 1 1z m-1 0H1v12h12V2z"></path>
+              </svg>      <a href="#d2h-962451" class="d2h-file-name">diff1.js → diff2.js</a>
+              <span class="d2h-file-stats">
+                  <span class="d2h-lines-added">+1</span>
+                  <span class="d2h-lines-deleted">-1</span>
+              </span>
+            </span>
+        </li>
+            </ol>
+        </div><div class="d2h-wrapper">
+            <div id="d2h-962451" class="d2h-file-wrapper" data-lang="js">
+            <div class="d2h-file-header">
+            <span class="d2h-file-name-wrapper">
+            <svg aria-hidden="true" class="d2h-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12">
+                <path d="M6 5H2v-1h4v1zM2 8h7v-1H2v1z m0 2h7v-1H2v1z m0 2h7v-1H2v1z m10-7.5v9.5c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h7.5l3.5 3.5z m-1 0.5L8 2H1v12h10V5z"></path>
+            </svg>    <span class="d2h-file-name">diff1.js → diff2.js</span>
+            <span class="d2h-tag d2h-moved d2h-moved-tag">RENAMED</span></span>
+        <label class="d2h-file-collapse">
+            <input class="d2h-file-collapse-input" type="checkbox" name="viewed" value="viewed">
+            Viewed
+        </label>
+            </div>
+            <div class="d2h-file-diff">
+                <div class="d2h-code-wrapper">
+                    <table class="d2h-diff-table">
+                        <tbody class="d2h-diff-tbody">
+                        <tr>
+            <td class="d2h-code-linenumber d2h-info"></td>
+            <td class="d2h-info">
+                <div class="d2h-code-line">@@ -1 +1 @@</div>
+            </td>
+        </tr><tr>
+            <td class="d2h-code-linenumber d2h-del d2h-change">
+              <div class="line-num1">1</div>
+        <div class="line-num2"></div>
+            </td>
+            <td class="d2h-del d2h-change">
+                <div class="d2h-code-line">
+                    <span class="d2h-code-line-prefix">-</span>
+                    <span class="d2h-code-line-ctn">var openedFile = fs.readFileSync(file, &#x27;utf-8&#x27;)<del>.trim()</del></span>
+                </div>
+            </td>
+        </tr><tr>
+            <td class="d2h-code-linenumber d2h-ins d2h-change">
+              <div class="line-num1"></div>
+        <div class="line-num2">1</div>
+            </td>
+            <td class="d2h-ins d2h-change">
+                <div class="d2h-code-line">
+                    <span class="d2h-code-line-prefix">+</span>
+                    <span class="d2h-code-line-ctn">var openedFile = fs.readFileSync(file, &#x27;utf-8&#x27;)<ins>;</ins></span>
+                </div>
+            </td>
+        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+  </body>
+</html>

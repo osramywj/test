@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./favicon.ico">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        #root{
+            /* height: 100px; */
+            /* width: 300px; */
+            background-color: #bfa;
+            /* padding: 20px; */
+            /* overflow: auto; */
+        }
+        div{
+            /* width: 100px; */
+            /* height: 100px; */
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="root" >
+        <h1 > {{n}}</h1>
+        <button @click="add">点击</button>
+        <button @click="des">毁灭</button>
+
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                n:1
+            },
+            methods: {
+                add(){
+                    console.log('add');
+                    this.n++;
+                },
+                des(){
+                    this.$destroy();
+                }
+            },
+            beforeCreate() {
+                console.log('beforeCreate');
+            },
+            created() {
+                console.log('created');
+            },
+            beforeMount() {
+                console.log('beforeMount');
+            },
+            beforeDestroy() {
+                console.log('beforeDestroy')
+            },
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./favicon.ico">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        #root{
+            /* height: 100px; */
+            /* width: 300px; */
+            /* background-color: #bfa; */
+            /* padding: 20px; */
+            /* overflow: auto; */
+        }
+        div{
+            /* width: 100px; */
+            /* height: 100px; */
+            /* background-color: orange; */
+        }
+    </style>
+</head>
+<body>
+    <div id="root" >
+        <h1>今天天气很{{weather}}</h1>
+        <button @click="changeWeather">切换天气</button>
+
+        <br>
+        <h1>n++: {{numbers.n}}</h1>
+        <button @click="numbers.n++">点击+1</button>
+
+        <br>
+        <h1>n++: {{numbers.x}}</h1>
+        <button @click="numbers.x++">点击+1</button>
+        <br>
+        <input type="checkbox" :checked="isChecked" @click="getCheck">
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+            el: "#root",
+            data: {
+                isHot: true,
+                numbers:{
+                    n:1,
+                    x:2
+                },
+                isChecked: false
+            },
+            computed: {
+                weather(){
+                    return this.isHot ? '炎热' : '凉爽';
+                }
+            },
+            methods: {
+                changeWeather(){
+                    this.isHot = !this.isHot;
+                },
+                getCheck(){
+                    console.log(this.isChecked);
+                }
+            },
+            watch: {
+                // 'numbers.n': {
+                //     // immediate: true,
+                //     // deep: true,
+                //     handler(newValue, oldValue){
+                //         console.log(newValue, oldValue);
+                //     }
+                // }
+                isHot(newValue, oldValue){
+                    console.log(newValue, oldValue);
+                }
+            }
+        })
+
+        // vm.$watch('isHot', {
+        //     handler(newValue, oldValue){
+        //         console.log(newValue, oldValue);
+        //     }
+        // })
+    </script>
+</body>
+</html>

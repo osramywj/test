@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            position: absolute;
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+            const boxes = document.getElementsByClassName('box');
+            boxes[0].onmousedown = function(event){
+                const posLeft = event.clientX - this.offsetLeft;
+                const posTop = event.clientY - this.offsetTop;
+
+
+                document.onmousemove = function(event){
+                    boxes[0].style.left = event.clientX - posLeft + 'px';
+                    boxes[0].style.top = event.clientY - posTop + 'px';  
+                }
+                document.onmouseup = function(){
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    鹅鹅鹅鹅鹅鹅饿
+    <div class="box">的点点滴滴</div>
+</body>
+</html>

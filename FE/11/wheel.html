@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            const boxes = document.getElementsByClassName('box');
+            boxes[0].onwheel = function(event){
+                console.log(event.deltaY, boxes[0].clientHeight);
+                boxes[0].style.height= boxes[0].clientHeight+event.deltaY + 'px';
+                // console.log(boxes[0].style);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

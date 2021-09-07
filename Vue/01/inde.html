@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./favicon.ico">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        #root{
+            /* height: 100px; */
+            /* width: 300px; */
+            background-color: #bfa;
+            /* padding: 20px; */
+            /* overflow: auto; */
+        }
+        div{
+            /* width: 100px; */
+            /* height: 100px; */
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="root" >
+        <form @submit.prevent="submit">
+            账号：<input type="text" v-model="name"><br>
+            密码：<input type="password" v-model="password"><br>
+            年龄：<input type="number" v-model.number="age"><br>
+            性别：
+            男<input type="radio" name="sex" id="" v-model="sex" value="male">
+            女<input type="radio" name="sex" id="" v-model="sex" value="female"><br>
+            爱好：
+            学习<input type="checkbox" name="" id="" v-model="study" value="study">
+            打游戏<input type="checkbox" name="" id="" v-model="game" value="game">
+            吃饭<input type="checkbox" name="" id="" v-model="eat" value="eat"><br>
+            所属校区：
+            <select name="" id="" v-model="city">
+                <option value="" >请选择校区</option>
+                <option value="beijing" >北京</option>
+                <option value="shanghai">上海</option>
+                <option value="zhengzhou">郑州</option>
+            </select><br>
+            其他信息：<textarea name="" id="" cols="20" rows="5" v-model="info"></textarea><br>
+            <input type="checkbox" v-model="read">阅读并接受<a href="javascript:;">《用户协议》</a>
+            <button>提交</button>
+        </form>
+
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                name: '',
+                password: '',
+                age: '',
+                sex: '',
+                study: '',
+                game: '',
+                eat: '',
+                hobby: [],
+                city: 'beijing',
+                info: '',
+                read: ''
+            },
+            methods: {
+                submit(){
+
+                }
+            },
+        });
+    </script>
+</body>
+</html>

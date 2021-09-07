@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            height: 600px;
+        }
+        .box{
+            width: 100px;height: 100px;background-color: #baf;
+            position: absolute;
+        }
+    </style>
+    <script>
+
+        window.onload = function(){
+            document.onmousemove = function(event){
+                const boxes = document.getElementsByClassName('box');
+                // console.log(boxes);
+                const sl = document.documentElement.scrollLeft;
+                const st = document.documentElement.scrollTop;
+                console.log(sl);
+                boxes[0].style.left = event.clientX + sl + 'px';
+                boxes[0].style.top = event.clientY + st + 'px';
+
+                
+                // console.log('left', boxes[0].style.left);
+                // console.log('event',event.clientX);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
