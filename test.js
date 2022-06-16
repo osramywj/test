@@ -42,18 +42,18 @@
 //     const archive = archiver('zip', {
 //         zlib: { level: 9 }, // Sets the compression level.
 //     });
-    
+
 //     output.on('close', function () {
 //         console.log(archive.pointer() + ' total bytes');
 //         console.log(
 //             'archiver has been finalized and the output file descriptor has closed.'
 //         );
 //     });
-    
+
 //     output.on('end', function () {
 //         console.log('Data has been drained');
 //     });
-    
+
 //     archive.on('warning', function (err) {
 //         if (err.code === 'ENOENT') {
 //             // log warning
@@ -62,18 +62,18 @@
 //             throw err;
 //         }
 //     });
-    
+
 //     archive.on('error', function (err) {
 //         throw err;
 //     });
-    
+
 //     archive.pipe(output);
 //     async function fetchUrl(url) {
 //         const response = await fetch(url);
 //         return await response.buffer();
 //     }
 //     const stream = await fetchUrl('http://ayx-oss-kbs.yunxiao.com/dmp/pdfs/ad8cd8922da47b38a2404cc47c98c9ff.pdf')
-    
+
 //     archive.append(stream, { name: 'ad8cd8922da47b38a2404cc47c98c9ff.pdf' });
 
 //     archive.finalize();
@@ -147,7 +147,7 @@
 // }
 
 // function getTree(data) {
-    // const treeMap = {};
+// const treeMap = {};
 //     for (const item of data) {
 //         treeMap[item.id] = item;
 //     }
@@ -268,47 +268,61 @@
 // api限流
 // 低代码平台
 
-nodejs事件循环说一下
-    node有个主线程，上面执行的任务形成一个执行栈，异步任务会有一个任务队列，当执行栈的任务执行完毕后，开始从任务队列里取在等待中的时间，拿回主线程里执行。一直循环这步操作。
-    6个阶段，timer, i/o callback, idle, poll, check, close callback
-垃圾回收机制
-    多数内存存活时间非常短；
-    新生代空间：一般比较小，回收很快；复制存活的堆内存，从from到to,然后清除from,交换两块内存。处理速度快，一般处理存留事件端的内存
-    老生代空间：经历过新生代空间回收以及to space 内存占比等条件时，内存会被转移到老生代空间，标记清除、整理算法，
+// nodejs事件循环说一下
+//     node有个主线程，上面执行的任务形成一个执行栈，异步任务会有一个任务队列，当执行栈的任务执行完毕后，开始从任务队列里取在等待中的时间，拿回主线程里执行。一直循环这步操作。
+//     6个阶段，timer, i/o callback, idle, poll, check, close callback
+// 垃圾回收机制
+//     多数内存存活时间非常短；
+//     新生代空间：一般比较小，回收很快；复制存活的堆内存，从from到to,然后清除from,交换两块内存。处理速度快，一般处理存留事件端的内存
+//     老生代空间：经历过新生代空间回收以及to space 内存占比等条件时，内存会被转移到老生代空间，标记清除、整理算法，
 
-基本数据类型说一下
-    string,number,boolean,object,null,undefined,symbol,binint
-redis的应用
-    string,hash,set,zset,list
-    缓存 hash
-    队列，list 先进先出
-    互斥锁 setnx
-    排序，zsort
-kafka有没有用过
-    kafka-node
-微任务和宏任务说一下
-    执行时机不一样，每次循环里有包含多个宏任务，首先执行宏任务，遇到微任务放入队列，宏任务执行完后再一起执行微任务
-    宏任务涉及到进程的切换，不共享上下文，所以会比较慢；事件
-    微任务对应的现成的切换，共享上下文，不存在上下文的切换，所以比较快；process.nextTick  promise.then  async/await
-mysql相关left join right join
+// 基本数据类型说一下
+//     string,number,boolean,object,null,undefined,symbol,binint
+// redis的应用
+//     string,hash,set,zset,list
+//     缓存 hash
+//     队列，list 先进先出
+//     互斥锁 setnx
+//     排序，zsort
+// kafka有没有用过
+//     kafka-node
+// 微任务和宏任务说一下
+//     执行时机不一样，每次循环里有包含多个宏任务，首先执行宏任务，遇到微任务放入队列，宏任务执行完后再一起执行微任务
+//     宏任务涉及到进程的切换，不共享上下文，所以会比较慢；事件
+//     微任务对应的现成的切换，共享上下文，不存在上下文的切换，所以比较快；process.nextTick  promise.then  async/await
+// mysql相关left join right join
 
-node中间件用过哪些
-    log4js-kafka-node 发消息
-    cookie-parser
-    cors
-    body-parser
-    api-monitor
-开发团队多大规模
-组内多少人
-thinkjs mysql你觉得多久可以上手
+// node中间件用过哪些
+//     log4js-kafka-node 发消息
+//     cookie-parser
+//     cors
+//     body-parser
+//     api-monitor
+// 开发团队多大规模
+// 组内多少人
+// thinkjs mysql你觉得多久可以上手
 
-gc 算法原理
-原型链
-三次握手
+// gc 算法原理
+// 原型链
+// 三次握手
 
-// 客户端向服务端请求，服务端将证书返回给客户端，证书里含公钥和签名，及证书明文信息，用散列函数计算明文信息得到摘要，在用公钥解密签名得到摘要，对比两个摘要信息，一致
-// 则表示公钥可信；
+// // 客户端向服务端请求，服务端将证书返回给客户端，证书里含公钥和签名，及证书明文信息，用散列函数计算明文信息得到摘要，在用公钥解密签名得到摘要，对比两个摘要信息，一致
+// // 则表示公钥可信；
 
 
-global.test = 123;
-console.log(test);
+// global.test = 123;
+// console.log(test);
+
+// function test() {
+//     console.log(222);
+// }
+
+// console.log(test instanceof Function);
+// function calTimeBetweenTwoDays() {
+
+// }
+// 排序
+
+
+console.log('dddd');
+console.log('第二部分');

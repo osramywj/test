@@ -22,8 +22,8 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "t",
-            "program": "${workspaceFolder}/t.js",
+            "name": "tt",
+            "program": "${workspaceFolder}/tt.js",
             // "autoAttachChildProcesses": true,
         },
         {

@@ -594,7 +594,7 @@
 // var a = 0;
 // console.log(Boolean(a=0))
 // function getSum(num1, num2, num3) {
-  // return ;
+// return ;
 // }
 // console.log(getSum(1, 2, 3));
 
@@ -710,7 +710,7 @@
 // }
 
 // for(let i in 4){
-  // console.log(i);           
+// console.log(i);           
 // }
 // const moment = require('moment');
 // console.log(moment('2021-01-03').isoWeek());
@@ -734,3 +734,61 @@
 // console.log(res);
 // const res = JSON.parse(null);
 // console.log(res);
+// const str = 'applications/61b04779adf76cbdba1f819b/9018bcdb-b2aa-4a07-906c-f1c540a376ca.jpg'
+// const aaa = str.replace(/applications\/\w{24}\/(.*)/, `applications/${222222}/$1`);
+// console.log(aaa);
+// const str = 'q=searchParams&topic=api';
+// const url = new URL('https://www.cnblogs.com/lanshu123/p/10668320.html');
+// console.log(url);
+// const ip = require('ip');
+// console.log(ip.address());
+// const { camelizeKeys, decamelizeKeys } = require('humps');
+
+// const obj = {
+//   "pages" : [
+//     {
+//       "components" : {
+//         colors: {
+//           '0.3': {
+//             type: 'linear'
+//           }
+//         }
+//       }
+//     }
+//   ]
+// }
+
+// const res = decamelizeKeys(obj);
+// console.log(JSON.stringify(res));
+// const { v4: uuidv4 } = require('uuid');
+// console.log(uuidv4());
+// const cateParentMap = {
+//   55: 4,
+//   131: 4,
+//   132: 55,
+//   144: 132,
+//   156: 144
+// }
+
+// const firstCates = [55,131];
+
+// function findFirstCate(id, cateParentMap, firstCates) {
+//   if (firstCates.includes(id)) return id;
+//   return findFirstCate(cateParentMap[id], cateParentMap, firstCates);
+// }
+
+// console.log(findFirstCate(156, cateParentMap, firstCates));
+// const arr = [
+// {a: 1},
+// {a: 2}
+// ];
+// console.log(_.find(arr, {a:2}).a);
+// const str = '/gatewayApi/dodp/v1/apiData/01f1afc825754778a3076b12b40b9d99/query';
+// const res = str.replace(/\/gatewayApi\/dodp/, '');
+// console.log(res);
+// const a  = ['a','b','c'];
+// for (const [aa, bb] of a.entries()) {
+//   console.log(aa, bb);
+// }
+// const _ = require('lodash');
+// console.log(_.isEmpty({ a: 1 }));

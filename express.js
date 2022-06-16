@@ -7,12 +7,9 @@ app.use(function (req, res, next) {
     next();
 })
 
-app.get('/test', function (req, res) {
-    if(req.params.a === 'b'){
-        res.send('hello world')
-    }else{
-        res.end('fk');
-    }
+app.get('/students', function (req, res) {
+    console.log(req.url);
+    res.send('我是学生列表')
 })
 
-app.listen(8080);
+app.listen(8081);

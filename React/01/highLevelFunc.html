@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Document</title>
+  <style>
+    .title {
+      color: orange;
+    }
+  </style>
+</head>
+<body>
+  <div id="test"></div>
+  <script src="../js/react.development.js"></script>
+  <script src="../js/react-dom.development.js"></script>
+  <script src="../js/babel.min.js"></script>
+  <script type="text/babel">
+    class MyComponent extends React.Component {
+      state = {username: '', pwd: ''};
+
+      handleSubmit = (event) => {
+        event.preventDefault();
+
+        const {username, pwd} = this.state;
+        console.log(username, pwd);
+      }
+      
+      // saveFormData = (name) => {
+      //   return (event) => {
+      //     this.setState({[name]: event.target.value});
+      //   }
+      // }
+
+      saveFormData = (name, event) => {
+        this.setState({[name]: event.target.value});
+      }
+
+      render() {
+        return (
+          <form action="" onSubmit={this.handleSubmit}>
+            {/*用户名：<input type="text" name="username" onChange={this.saveFormData('username')}/>*/}
+            <input type="text" name="username" onChange={(event) => this.saveFormData('username', event)}/>
+            <button>提交</button>
+          </form>
+        )
+      }
+    }
+    ReactDOM.render(<MyComponent />, document.getElementById('test'));
+
+  </script>
+</body>
+</html>

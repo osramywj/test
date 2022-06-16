@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Document</title>
+  <style>
+    .title {
+      color: orange;
+    }
+  </style>
+</head>
+<body>
+  <div id="test"></div>
+  <script src="../js/react.development.js"></script>
+  <script src="../js/react-dom.development.js"></script>
+  <script src="../js/babel.min.js"></script>
+  <script type="text/babel">
+    class MyComponent extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {isHot: true};
+        this.changeWeather = this.changeWeather.bind(this);
+      }
+
+      changeWeather = () => {
+        // console.log(this);
+        this.setState({isHot: !this.state.isHot})
+      }
+
+      render() {
+        return <h1 onClick={this.changeWeather}>今天很{this.state.isHot ? '热' : '凉快'}</h1>
+      }
+    }
+    ReactDOM.render(<MyComponent />, document.getElementById('test'));
+
+    const VDOM = (  /* 此处一定不要写引号，因为不是字符串 */
+			<h1 id="title">
+				<span>Hello,React</span>
+			</h1>
+		)
+    console.log(VDOM);
+  </script>
+</body>
+</html>

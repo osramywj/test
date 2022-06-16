@@ -3,7 +3,7 @@ const ConsulConfig = require('./consul');
 const consul = new ConsulConfig();
 
 http.createServer(async (req, res) => {
-    const {url, method} = req;
+    const { url, method } = req;
 
     // 测试健康检查
     if (url === '/health') {
@@ -26,4 +26,4 @@ http.createServer(async (req, res) => {
             res.end('ERROR!');
         }
     }
-}).listen('9999');
+}).listen('8081');

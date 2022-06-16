@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Document</title>
+  <style>
+    .list{
+      height: 180px;
+      width: 150px;
+      overflow: auto;
+      background-color: #bfa;
+      list-style: none;
+    }
+
+    .news{
+      height: 30px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="test"></div>
+  <script src="../js/17/react.development.js"></script>
+  <script src="../js/17/react-dom.development.js"></script>
+  <script src="../js/17/babel.min.js"></script>
+  <script type="text/babel">
+    class Count extends React.Component {
+      constructor(props) {
+        console.log('constructor');
+        super(props);
+        this.state = {arr: [], diff: 0};
+      }
+
+      // add = () => {
+      //   this.setState({count: this.state.count + 1});
+      // }
+
+      // death = () => {
+      //   ReactDOM.unmountComponentAtNode(document.getElementById('test'));
+      // }
+
+      // static getDerivedStateFromProps(props) {
+      //   // console.log('getDerivedStateFromProps');
+      //   return null;
+      // }
+
+      componentDidMount() {
+        // console.log('componentDidMount');
+        setInterval(() => {
+          const {arr} = this.state;
+          const newEle = '元素' + (arr.length + 1);
+          this.setState({arr: [newEle, ...arr]});
+        }, 1000);
+      }
+
+      getSnapshotBeforeUpdate() {
+        const listEle = document.getElementsByClassName('list')[0];
+        const height = listEle.scrollHeight;
+        return height;
+      }
+
+      componentDidUpdate(a,b,c) {
+        const listEle = document.getElementsByClassName('list')[0];
+        const height = listEle.scrollHeight;
+        listEle.scrollTop += height - c;
+      }
+      
+
+      render() {
+        // console.log('render');
+        const {arr} = this.state;
+        return (
+          <div>
+            <ul className="list">
+              {
+                arr.map((v,i) => {
+                  return <li className="news" key={i}>{v}</li>
+                })
+              }
+            </ul>
+          </div>
+        )
+      }
+    }
+    ReactDOM.render(<Count name="yang"/>, document.getElementById('test'));
+
+  </script>
+</body>
+</html>
