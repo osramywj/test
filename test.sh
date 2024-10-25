@@ -1,23 +1,23 @@
-#!/bin/bash
+#!/bin/zsh
 
   
-showprogress()  
-{  
-        code=""  
-        for((i=1;i<=20;i++)); do  
-                code=${code}"$1"  
+# showprogress()  
+# {  
+#         code=""  
+#         for((i=1;i<=20;i++)); do  
+#                 code=${code}"$1"  
   
-                if [ $2 -eq "1" ]; then  
-                echo $code
-                        printf "%3d%% \x1b[31m%s\x1b[0m\r" $(($i*5)) $code  
-                else  
-                        printf "%3d%% \x1b[41m\x1b[31m%s\x1b[0m\r" $(($i*5)) $code  
-                fi  
-                sleep 0.5
-        done  
-}  
+#                 if [ $2 -eq "1" ]; then  
+#                 echo $code
+#                         printf "%3d%% \x1b[31m%s\x1b[0m\r" $(($i*5)) $code  
+#                 else  
+#                         printf "%3d%% \x1b[41m\x1b[31m%s\x1b[0m\r" $(($i*5)) $code  
+#                 fi  
+#                 sleep 0.5
+#         done  
+# }  
   
-showprogress "#" 1  
+# showprogress "#" 1  
 
 # showprogress "#" 1  
 # npm i &>/dev/null
@@ -214,3 +214,15 @@ showprogress "#" 1
 # sort -n -k 2 -k 3r t.js
 
 # grep "COLLSCAN" 81.log | sed 'filter: ' |awk '{if(+$NF > 1000) print $6,}' 
+
+# printj(){
+#     echo $(pwd);
+# }
+# res=$(printj)
+# echo $res
+
+str="123456(3).mp4"
+
+a="1"
+b=2
+echo a+b

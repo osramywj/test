@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .heartContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        width: 100px;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+
+      .heart {
+        width: 100px;
+        height: 100px;
+        position: relative;
+      }
+
+      .heart::before,
+      .heart::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 80%;
+        border-radius: 50% 50% 0 0/31.25% 31.25% 0 0;
+        background: red;
+      }
+
+      .heart::before {
+        left: 50px;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+      }
+
+      .heart::after {
+        left: 0;
+        transform: rotate(45deg);
+        transform-origin: 100% 100%;
+      }
+
+      .heartContainer {
+        animation: scale 1s infinite;
+      }
+
+      @keyframes scale {
+        from {
+          transform: scale(1.2);
+        }
+        to {
+          transform: scale(0.8);
+        }
+      }
+    </style>
+
+    <div class="heartContainer">
+      <div class="heart"></div>
+    </div>
+  </body>
+</html>

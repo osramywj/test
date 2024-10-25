@@ -322,12 +322,27 @@
 
 // }
 // 排序
+const _ = require('lodash');
+// const a = [
+//   { appId: 1, source_id: 1 },
+//   { appId: 1, source_id: 2 },
+//   { appId: 2, source_id: 1 },
+//   { appId: 2, source_id: 2 },
+//   { appId: 2, source_id: 3 },
+// ]
+// const b = {};
 
+// console.log('_.isEmpty(b)', _.isEmpty(b));
 
-console.log('dddd');
-console.log('第二部分');
-sssss
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log(1);
+    resolve(2);
+  }, 1000);
+})
 
-1111
-2222
-3333
+promise.then((res) => {
+  console.log(res);
+}).then((res) => {
+  console.log(res);
+});

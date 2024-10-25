@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        perspective: 800px;
+      }
+      .d1 {
+        position: relative;
+        width: 500px;
+        height: 500px;
+        background-color: rgb(196, 189, 174);
+      }
+      .d2 {
+        /* width: 100px; */
+        /* height: 100px; */
+        background-color: #bfa;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) translateZ(1000px);
+        background-image: -webkit-linear-gradient(bottom, red, #fd8403, yellow);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="d1">
+      <div class="d2">1231423423432</div>
+    </div>
+  </body>
+</html>
