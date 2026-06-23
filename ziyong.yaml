@@ -1,0 +1,33 @@
+allow-lan: false
+external-controller: 127.0.0.1:9090
+log-level: info
+mixed-port: 7890
+mode: rule
+
+proxies:
+  - name: VPS-VMESS
+    type: vmess
+    server: 107.172.75.141
+    port: 10086
+    uuid: e02c67a8-d769-4d73-833a-ab6acdb86e6e
+    alterId: 0
+    cipher: auto
+    network: tcp
+    udp: true
+
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - VPS-VMESS
+      - DIRECT
+
+rules:
+  - DOMAIN-SUFFIX,google.com,PROXY
+  - DOMAIN-SUFFIX,youtube.com,PROXY
+  - DOMAIN-SUFFIX,facebook.com,PROXY
+  - DOMAIN-SUFFIX,twitter.com,PROXY
+  - DOMAIN-SUFFIX,github.com,PROXY
+  - DOMAIN-KEYWORD,google,PROXY
+  - GEOIP,CN,DIRECT
+  - MATCH,PROXY

@@ -1,1 +1,0 @@
-var openedFile = fs.readFileSync(file, 'utf-8');

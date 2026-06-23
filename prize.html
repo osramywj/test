@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>六一儿童节 荣誉奖状</title>
+    <style>
+      :root {
+        --gold: #c9a84c;
+        --gold-light: #e8d48b;
+        --gold-dark: #9a7b2e;
+        --red: #c23b22;
+        --red-deep: #8b1a1a;
+        --cream: #fff8e7;
+        --ink: #2b1810;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f0e6d3;
+        padding: 20px;
+      }
+
+      .cert-wrapper {
+        width: 794px;
+        height: 1123px;
+        background: var(--cream);
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Outer decorative border */
+      .border-outer {
+        position: absolute;
+        inset: 16px;
+        border: 3px solid var(--gold);
+        pointer-events: none;
+      }
+
+      .border-inner {
+        position: absolute;
+        inset: 24px;
+        border: 1.5px solid var(--gold-light);
+        pointer-events: none;
+      }
+
+      /* Corner ornaments */
+      .corner {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        pointer-events: none;
+      }
+      .corner svg {
+        width: 100%;
+        height: 100%;
+      }
+      .corner.tl {
+        top: 12px;
+        left: 12px;
+      }
+      .corner.tr {
+        top: 12px;
+        right: 12px;
+        transform: scaleX(-1);
+      }
+      .corner.bl {
+        bottom: 12px;
+        left: 12px;
+        transform: scaleY(-1);
+      }
+      .corner.br {
+        bottom: 12px;
+        right: 12px;
+        transform: scale(-1, -1);
+      }
+
+      /* Side flourishes */
+      .side-flourish {
+        position: absolute;
+        pointer-events: none;
+      }
+      .side-flourish.left {
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 200px;
+      }
+      .side-flourish.right {
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%) scaleX(-1);
+        width: 30px;
+        height: 200px;
+      }
+
+      .content {
+        position: absolute;
+        inset: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 30px 40px;
+      }
+
+      /* Floating stars */
+      .stars {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      .star {
+        position: absolute;
+        font-size: 18px;
+        opacity: 0;
+        animation: twinkle 3s ease-in-out infinite;
+      }
+
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0;
+          transform: scale(0.5) rotate(0deg);
+        }
+        50% {
+          opacity: 0.6;
+          transform: scale(1) rotate(180deg);
+        }
+      }
+
+      /* Header emblem */
+      .emblem {
+        width: 100px;
+        height: 100px;
+        margin-top: 10px;
+        position: relative;
+      }
+
+      /* Title */
+      .title-group {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .title-main {
+        font-size: 72px;
+        font-weight: 900;
+        color: var(--red);
+        letter-spacing: 24px;
+        text-shadow: 2px 2px 0 var(--gold-light);
+        font-family: "STKaiti", "KaiTi", "楷体", serif;
+        line-height: 1.2;
+      }
+
+      .title-sub {
+        font-size: 18px;
+        color: var(--gold-dark);
+        letter-spacing: 12px;
+        margin-top: 8px;
+        font-family: "STKaiti", "KaiTi", "楷体", serif;
+      }
+
+      .divider {
+        width: 400px;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
+        margin: 24px 0;
+      }
+
+      /* Recipient name */
+      .recipient-section {
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      .recipient-label {
+        font-size: 20px;
+        color: var(--ink);
+        font-family: "STKaiti", "KaiTi", "楷体", serif;
+        letter-spacing: 4px;
+      }
+
+      .recipient-name {
+        font-size: 52px;
+        font-weight: 900;
+        color: var(--red-deep);
+        font-family: "STKaiti", "KaiTi", "楷体", serif;
+        margin: 8px 0;
+        padding: 0 20px;
+        border-bottom: 3px solid var(--gold);
+        display: inline-block;
+        line-height: 1.4;
+        min-width: 200px;
+        cursor: pointer;
+        position: relative;
+        outline: none;
+      }
+
+      .recipient-name:hover::after {
+        content: "✏️";
+        position: absolute;
+        right: -30px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+      }
+
+      .recipient-name:focus {
+        background: rgba(201, 168, 76, 0.1);
+        border-radius: 4px;
+      }
+
+      /* Body text */
+      .body-text {
+        margin-top: 30px;
+        text-align: center;
+        max-width: 520px;
+        line-height: 2.2;
+      }
+
+      .body-text p {
+        font-size: 22px;
+        color: var(--ink);
+        font-family: "STFangsong", "FangSong", "仿宋", serif;
+        letter-spacing: 2px;
+        text-indent: 2em;
+        text-align: justify;
+      }
+
+      .highlight {
+        color: var(--red);
+        font-weight: bold;
+        font-size: 24px;
+      }
+
+      /* Award title */
+      .award-badge {
+        margin-top: 36px;
+        text-align: center;
+        position: relative;
+      }
+
+      .award-title {
+        font-size: 36px;
+        font-weight: 900;
+        color: var(--gold-dark);
+        font-family: "STKaiti", "KaiTi", "楷体", serif;
+        letter-spacing: 8px;
+        padding: 12px 48px;
+        border: 2px solid var(--gold);
+        display: inline-block;
+        position: relative;
+        background: linear-gradient(
+          135deg,
+          rgba(232, 212, 139, 0.15),
+          rgba(201, 168, 76, 0.1)
+        );
+      }
+
+      .award-title::before,
+      .award-title::after {
+        content: "★";
+        color: var(--gold);
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .award-title::before {
+        left: 12px;
+      }
+      .award-title::after {
+        right: 12px;
+      }
+
+      /* Seal and signature */
+      .footer {
+        margin-top: auto;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding-right: 30px;
+        padding-bottom: 10px;
+        position: relative;
+      }
+
+      .seal-area {
+        text-align: center;
+        position: relative;
+      }
+
+      .issuer {
+        font-size: 20px;
+        color: var(--ink);
+        font-family: "STKaiti", "KaiTi", "楷体", serif;
+        letter-spacing: 4px;
+        margin-bottom: 6px;
+      }
+
+      .date-text {
+        font-size: 18px;
+        color: var(--ink);
+        font-family: "STKaiti", "KaiTi", "楷体", serif;
+        letter-spacing: 2px;
+      }
+
+      .stamp {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        right: -10px;
+        top: -40px;
+        transform: rotate(-15deg);
+        opacity: 0.85;
+      }
+
+      /* Confetti burst on load */
+      .confetti-container {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 100;
+        overflow: hidden;
+      }
+
+      .confetti {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        opacity: 0;
+        animation: confetti-fall 3s ease-out forwards;
+      }
+
+      @keyframes confetti-fall {
+        0% {
+          opacity: 1;
+          transform: translateY(-20px) rotate(0deg) scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(100vh) rotate(720deg) scale(0.3);
+        }
+      }
+
+      /* Print styles */
+      @media print {
+        body {
+          background: none;
+          padding: 0;
+          margin: 0;
+        }
+        .cert-wrapper {
+          box-shadow: none;
+          width: 210mm;
+          height: 297mm;
+        }
+        .confetti-container {
+          display: none;
+        }
+        .stars {
+          display: none;
+        }
+
+        @page {
+          size: A4 portrait;
+          margin: 0;
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 830px) {
+        .cert-wrapper {
+          width: 100%;
+          height: auto;
+          overflow: visible;
+        }
+
+        .border-outer {
+          inset: 8px;
+          border-width: 2px;
+        }
+
+        .border-inner {
+          inset: 14px;
+        }
+
+        .corner {
+          width: 40px;
+          height: 40px;
+        }
+        .corner.tl {
+          top: 6px;
+          left: 6px;
+        }
+        .corner.tr {
+          top: 6px;
+          right: 6px;
+        }
+        .corner.bl {
+          bottom: 6px;
+          left: 6px;
+        }
+        .corner.br {
+          bottom: 6px;
+          right: 6px;
+        }
+
+        .side-flourish.left,
+        .side-flourish.right {
+          width: 16px;
+          height: 100px;
+        }
+        .side-flourish.left {
+          left: 10px;
+        }
+        .side-flourish.right {
+          right: 10px;
+        }
+
+        .content {
+          position: relative;
+          inset: auto;
+          padding: 24px 20px;
+        }
+
+        .emblem {
+          width: 56px;
+          height: 56px;
+          margin-top: 4px;
+        }
+        .emblem svg {
+          width: 56px;
+          height: 56px;
+        }
+
+        .title-group {
+          margin-top: 10px;
+        }
+
+        .title-main {
+          font-size: 10vw;
+          letter-spacing: 3vw;
+          text-shadow: 1px 1px 0 var(--gold-light);
+        }
+
+        .title-sub {
+          font-size: 10px;
+          letter-spacing: 4px;
+          margin-top: 4px;
+        }
+
+        .divider {
+          width: 60%;
+          margin: 12px 0;
+        }
+
+        .recipient-section {
+          margin-top: 6px;
+        }
+
+        .recipient-label {
+          font-size: 14px;
+          letter-spacing: 2px;
+        }
+
+        .recipient-name {
+          font-size: 7vw;
+          margin: 4px 0;
+          padding: 0 10px;
+          border-bottom-width: 2px;
+          min-width: 100px;
+        }
+
+        .recipient-name:hover::after {
+          font-size: 14px;
+          right: -22px;
+        }
+
+        .body-text {
+          margin-top: 16px;
+          max-width: 100%;
+          line-height: 2;
+        }
+
+        .body-text p {
+          font-size: 2.8vw;
+          letter-spacing: 1px;
+        }
+
+        .highlight {
+          font-size: 3.2vw;
+        }
+
+        .award-badge {
+          margin-top: 20px;
+        }
+
+        .award-title {
+          font-size: 4.5vw;
+          letter-spacing: 4px;
+          padding: 8px 28px;
+        }
+
+        .award-title::before,
+        .award-title::after {
+          font-size: 14px;
+        }
+        .award-title::before {
+          left: 8px;
+        }
+        .award-title::after {
+          right: 8px;
+        }
+
+        .footer {
+          padding-right: 16px;
+          padding-bottom: 4px;
+        }
+
+        .issuer {
+          font-size: 13px;
+          letter-spacing: 2px;
+          margin-bottom: 4px;
+        }
+
+        .date-text {
+          font-size: 12px;
+          letter-spacing: 1px;
+        }
+
+        .stamp {
+          width: 70px;
+          height: 70px;
+          right: -6px;
+          top: -24px;
+        }
+
+        .star {
+          font-size: 10px !important;
+        }
+
+        .closing-text p {
+          font-size: 14px;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .content {
+          padding: 18px 14px;
+        }
+
+        .border-outer {
+          inset: 6px;
+        }
+
+        .border-inner {
+          inset: 10px;
+        }
+
+        .corner {
+          width: 28px;
+          height: 28px;
+        }
+
+        .title-main {
+          font-size: 11vw;
+          letter-spacing: 2vw;
+        }
+
+        .title-sub {
+          font-size: 8px;
+          letter-spacing: 2px;
+        }
+
+        .divider {
+          width: 55%;
+          margin: 8px 0;
+        }
+
+        .recipient-name {
+          font-size: 8vw;
+          min-width: 80px;
+        }
+
+        .body-text p {
+          font-size: 3.2vw;
+        }
+
+        .highlight {
+          font-size: 3.6vw;
+        }
+
+        .award-title {
+          font-size: 5vw;
+          letter-spacing: 2px;
+          padding: 6px 22px;
+        }
+
+        .award-title::before {
+          left: 5px;
+        }
+        .award-title::after {
+          right: 5px;
+        }
+
+        .emblem {
+          width: 44px;
+          height: 44px;
+        }
+        .emblem svg {
+          width: 44px;
+          height: 44px;
+        }
+
+        .stamp {
+          width: 56px;
+          height: 56px;
+          right: -4px;
+          top: -18px;
+        }
+
+        .issuer {
+          font-size: 11px;
+        }
+
+        .date-text {
+          font-size: 10px;
+        }
+
+        .closing-text p {
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="confetti-container" id="confetti"></div>
+
+    <div class="cert-wrapper" id="cert">
+      <!-- Stars -->
+      <div class="stars" id="stars"></div>
+
+      <!-- Borders -->
+      <div class="border-outer"></div>
+      <div class="border-inner"></div>
+
+      <!-- Corner ornaments -->
+      <div class="corner tl">
+        <svg viewBox="0 0 80 80" fill="none">
+          <path
+            d="M5 5 Q5 40 40 40 Q5 40 5 75"
+            stroke="#C9A84C"
+            stroke-width="2"
+            fill="none"
+          />
+          <path
+            d="M10 5 Q10 35 40 35"
+            stroke="#E8D48B"
+            stroke-width="1"
+            fill="none"
+          />
+          <circle cx="5" cy="5" r="3" fill="#C9A84C" />
+          <circle cx="40" cy="40" r="2" fill="#C9A84C" />
+          <path
+            d="M15 10 Q15 25 30 25"
+            stroke="#C9A84C"
+            stroke-width="1.5"
+            fill="none"
+          />
+          <circle cx="15" cy="10" r="2" fill="#E8D48B" />
+        </svg>
+      </div>
+      <div class="corner tr">
+        <svg viewBox="0 0 80 80" fill="none">
+          <path
+            d="M5 5 Q5 40 40 40 Q5 40 5 75"
+            stroke="#C9A84C"
+            stroke-width="2"
+            fill="none"
+          />
+          <path
+            d="M10 5 Q10 35 40 35"
+            stroke="#E8D48B"
+            stroke-width="1"
+            fill="none"
+          />
+          <circle cx="5" cy="5" r="3" fill="#C9A84C" />
+          <circle cx="40" cy="40" r="2" fill="#C9A84C" />
+          <path
+            d="M15 10 Q15 25 30 25"
+            stroke="#C9A84C"
+            stroke-width="1.5"
+            fill="none"
+          />
+          <circle cx="15" cy="10" r="2" fill="#E8D48B" />
+        </svg>
+      </div>
+      <div class="corner bl">
+        <svg viewBox="0 0 80 80" fill="none">
+          <path
+            d="M5 5 Q5 40 40 40 Q5 40 5 75"
+            stroke="#C9A84C"
+            stroke-width="2"
+            fill="none"
+          />
+          <path
+            d="M10 5 Q10 35 40 35"
+            stroke="#E8D48B"
+            stroke-width="1"
+            fill="none"
+          />
+          <circle cx="5" cy="5" r="3" fill="#C9A84C" />
+          <circle cx="40" cy="40" r="2" fill="#C9A84C" />
+          <path
+            d="M15 10 Q15 25 30 25"
+            stroke="#C9A84C"
+            stroke-width="1.5"
+            fill="none"
+          />
+          <circle cx="15" cy="10" r="2" fill="#E8D48B" />
+        </svg>
+      </div>
+      <div class="corner br">
+        <svg viewBox="0 0 80 80" fill="none">
+          <path
+            d="M5 5 Q5 40 40 40 Q5 40 5 75"
+            stroke="#C9A84C"
+            stroke-width="2"
+            fill="none"
+          />
+          <path
+            d="M10 5 Q10 35 40 35"
+            stroke="#E8D48B"
+            stroke-width="1"
+            fill="none"
+          />
+          <circle cx="5" cy="5" r="3" fill="#C9A84C" />
+          <circle cx="40" cy="40" r="2" fill="#C9A84C" />
+          <path
+            d="M15 10 Q15 25 30 25"
+            stroke="#C9A84C"
+            stroke-width="1.5"
+            fill="none"
+          />
+          <circle cx="15" cy="10" r="2" fill="#E8D48B" />
+        </svg>
+      </div>
+
+      <div class="content">
+        <!-- Emblem -->
+        <div class="emblem">
+          <svg viewBox="0 0 100 100" width="100" height="100">
+            <defs>
+              <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color: #e8d48b" />
+                <stop offset="100%" style="stop-color: #c9a84c" />
+              </linearGradient>
+            </defs>
+            <circle
+              cx="50"
+              cy="50"
+              r="45"
+              fill="none"
+              stroke="#C9A84C"
+              stroke-width="2"
+            />
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              fill="none"
+              stroke="#E8D48B"
+              stroke-width="1"
+            />
+            <text
+              x="50"
+              y="58"
+              text-anchor="middle"
+              font-size="42"
+              fill="url(#starGrad)"
+            >
+              🌟
+            </text>
+          </svg>
+        </div>
+
+        <!-- Title -->
+        <div class="title-group">
+          <div class="title-main">奖 状</div>
+          <div class="title-sub">CERTIFICATE OF HONOR</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Recipient -->
+        <div class="recipient-section">
+          <div class="recipient-label">兹证明</div>
+          <div
+            class="recipient-name"
+            contenteditable="true"
+            id="recipientName"
+            spellcheck="false"
+          >
+            李珂
+          </div>
+          <div class="recipient-label">同学：</div>
+        </div>
+
+        <!-- Body -->
+        <div class="body-text">
+          <p>
+            在二〇二六年度<span class="highlight">「国际六一儿童节」</span
+            >评选活动中，凭借超凡的“动手”能力、卓越的零食鉴赏水平、以及在“赖床不起”项目中的杰出表现，经组委会严格审核，综合评定为：
+          </p>
+        </div>
+
+        <!-- Award Badge -->
+        <div class="award-badge">
+          <div class="award-title">年度最佳宝宝</div>
+        </div>
+
+        <div class="body-text closing-text" style="margin-top: 20px">
+          <p
+            style="text-indent: 0; text-align: center; color: var(--gold-dark)"
+          >
+            特发此状，以资鼓励。望再接再厉，<br />永葆童心，快乐每一天！
+          </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+          <div class="seal-area">
+            <div class="issuer">全球宝宝认证中心</div>
+            <div class="date-text">二〇二六年六月一日</div>
+            <!-- Stamp -->
+            <svg class="stamp" viewBox="0 0 120 120">
+              <circle
+                cx="60"
+                cy="60"
+                r="54"
+                fill="none"
+                stroke="#C23B22"
+                stroke-width="3"
+                opacity="0.7"
+              />
+              <circle
+                cx="60"
+                cy="60"
+                r="48"
+                fill="none"
+                stroke="#C23B22"
+                stroke-width="1"
+                opacity="0.5"
+              />
+              <text
+                x="60"
+                y="38"
+                text-anchor="middle"
+                font-size="14"
+                fill="#C23B22"
+                opacity="0.8"
+                font-family="STKaiti, KaiTi, 楷体, serif"
+                font-weight="bold"
+              >
+                全球宝宝
+              </text>
+              <text
+                x="60"
+                y="56"
+                text-anchor="middle"
+                font-size="14"
+                fill="#C23B22"
+                opacity="0.8"
+                font-family="STKaiti, KaiTi, 楷体, serif"
+                font-weight="bold"
+              >
+                认证中心
+              </text>
+              <text
+                x="60"
+                y="74"
+                text-anchor="middle"
+                font-size="11"
+                fill="#C23B22"
+                opacity="0.8"
+                font-family="STKaiti, KaiTi, 楷体, serif"
+              >
+                （认证专用章）
+              </text>
+              <line
+                x1="20"
+                y1="82"
+                x2="100"
+                y2="82"
+                stroke="#C23B22"
+                stroke-width="1"
+                opacity="0.4"
+              />
+              <text
+                x="60"
+                y="96"
+                text-anchor="middle"
+                font-size="9"
+                fill="#C23B22"
+                opacity="0.6"
+                font-family="STKaiti, KaiTi, 楷体, serif"
+              >
+                CERTIFIED ★ BABY
+              </text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Confetti burst on load
+      (function () {
+        const container = document.getElementById("confetti");
+        const colors = [
+          "#C9A84C",
+          "#C23B22",
+          "#E8D48B",
+          "#FF6B6B",
+          "#4ECDC4",
+          "#FFE66D",
+          "#FF8A5C",
+          "#A8E6CF",
+        ];
+        const shapes = ["circle", "square", "triangle"];
+
+        for (let i = 0; i < 80; i++) {
+          const el = document.createElement("div");
+          el.className = "confetti";
+          const color = colors[Math.floor(Math.random() * colors.length)];
+          const size = 6 + Math.random() * 10;
+          const shape = shapes[Math.floor(Math.random() * shapes.length)];
+
+          el.style.left = Math.random() * 100 + "%";
+          el.style.width = size + "px";
+          el.style.height = size + "px";
+          el.style.background = color;
+          el.style.animationDelay = Math.random() * 1.5 + "s";
+          el.style.animationDuration = 2 + Math.random() * 2 + "s";
+
+          if (shape === "circle") {
+            el.style.borderRadius = "50%";
+          } else if (shape === "triangle") {
+            el.style.width = "0";
+            el.style.height = "0";
+            el.style.background = "none";
+            el.style.borderLeft = size / 2 + "px solid transparent";
+            el.style.borderRight = size / 2 + "px solid transparent";
+            el.style.borderBottom = size + "px solid " + color;
+          }
+
+          container.appendChild(el);
+        }
+
+        setTimeout(() => {
+          container.style.display = "none";
+        }, 4000);
+      })();
+
+      // Twinkling stars
+      (function () {
+        const starsContainer = document.getElementById("stars");
+        const starChars = ["✦", "✧", "⋆", "✶", "✷"];
+        const colors = ["#C9A84C", "#E8D48B", "#C23B22", "#FFD700"];
+
+        for (let i = 0; i < 20; i++) {
+          const star = document.createElement("div");
+          star.className = "star";
+          star.textContent =
+            starChars[Math.floor(Math.random() * starChars.length)];
+          star.style.left = 5 + Math.random() * 90 + "%";
+          star.style.top = 5 + Math.random() * 90 + "%";
+          star.style.color = colors[Math.floor(Math.random() * colors.length)];
+          star.style.animationDelay = Math.random() * 3 + "s";
+          star.style.animationDuration = 2 + Math.random() * 3 + "s";
+          star.style.fontSize = 12 + Math.random() * 14 + "px";
+          starsContainer.appendChild(star);
+        }
+      })();
+
+      // Editable name placeholder behavior
+      const nameEl = document.getElementById("recipientName");
+      nameEl.addEventListener("focus", function () {
+        if (this.textContent === "你的名字") {
+          this.textContent = "";
+        }
+      });
+      nameEl.addEventListener("blur", function () {
+        if (this.textContent.trim() === "") {
+          this.textContent = "你的名字";
+        }
+      });
+    </script>
+  </body>
+</html>

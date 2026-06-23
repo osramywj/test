@@ -1,0 +1,22 @@
+{
+    "total_accounts": 5,
+    "concurrent_workers": 5,
+    "headless": false,
+    "proxy": "http://127.0.0.1:7890",
+    "cf_worker_domain": "mail.awsl.uk",
+    "cf_email_domain": "awsl.uk",
+    "cf_admin_password": "YOUR_CF_ADMIN_PASSWORD",
+    "oauth_issuer": "https://auth.openai.com",
+    "oauth_client_id": "app_EMoamEEZ73f0CkXaXp7hrann",
+    "oauth_redirect_uri": "http://localhost:1455/auth/callback",
+    "upload_api_url": "http://YOUR_SERVER_IP:8080/v0/management/auth-files",
+    "upload_api_token": "YOUR_CPA_TOKEN",
+    "cli_proxy_api_base": "http://YOUR_SERVER_IP:8080",
+    "cli_proxy_management_url": "http://YOUR_SERVER_IP:8080/management.html#/oauth",
+    "cli_proxy_password": "YOUR_CPA_PASSWORD",
+    "accounts_file": "accounts.txt",
+    "csv_file": "registered_accounts.csv",
+    "ak_file": "ak.txt",
+    "rk_file": "rk.txt",
+    "ops_interval_hours": 4
+}
